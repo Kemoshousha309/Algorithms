@@ -1,4 +1,5 @@
 // PROBLEM SOLVING
+const utils = require("./utils.js");
 
 // write a function that indicates the anagrams
 function isAnagram(str1, str2){
@@ -49,19 +50,15 @@ function uniqueValues(arr){
     if(arr[i] > arr[uniqueIndex]){
       uniqueIndex++;
       if(i !== uniqueIndex){
-        swap(arr, i, uniqueIndex);
+        utils.swap(arr, i, uniqueIndex);
       }
     }
   }
   return arr.slice(0, uniqueIndex+1)
 }
 
-function swap(arr, index1, index2) { // not pure function
-  const temp = arr[index1];
-  arr[index1] = arr[index2];
-  arr[index2] = temp;
-}
-// console.log(uniqueValues([1, 2, 2, 2, 3, 3, 5, 6, 6, 7, 7, 8]))
+
+console.log(uniqueValues([1, 2, 2, 2, 3, 3, 5, 6, 6, 7, 7, 8]))
 
 // get the max sum form array sequence
 function maxSum (arr, k) {
@@ -90,4 +87,4 @@ function maxSum (arr, k) {
   return max
 }
 
-console.log(maxSum([2, 6, 2, 3, 7, 8, 2, 7, 1, 4], 3))
+// console.log(maxSum([2, 6, 2, 3, 7, 8, 2, 7, 1, 4], 3))
